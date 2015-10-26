@@ -1,0 +1,39 @@
+{
+  "name": "twitter-graph",
+  "version": "0.1.0",
+  "description": "A twitter followers and user analysis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run babel-node -- index.js | bunyan -o short",
+    "crawler": "npm run babel-node -- ./lib/crawler.js | bunyan -o short",
+    "gexf": "npm run babel-node -- ./lib/scripts/gexf.js | bunyan -o short",
+    "babel-node": "babel-node --stage 0",
+    "dev": "nodemon --exec npm run babel-node -- index.js | bunyan -o short",
+    "lint": "standard --verbose | snazzy"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "keywords": [
+    "twitter",
+    "followers",
+    "graph"
+  ],
+  "author": "Joao Antunes <j.goncalo.antunes@gmail.com> (http://github.com/JGAntunes)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^5.8.29",
+    "bunyan": "^1.5.1",
+    "nodemon": "^1.3.7",
+    "pre-commit": "^1.0.7",
+    "snazzy": "^2.0.1",
+    "standard": "^5.3.1"
+  },
+  "dependencies": {
+    "async": "^1.4.2",
+    "gexf": "^0.2.5",
+    "mongoose": "^4.2.2",
+    "twit": "^2.1.0"
+  }
+}
