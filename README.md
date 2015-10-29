@@ -1,4 +1,4 @@
-# followers-graph
+# twitter-ego
 
 **[Work in progress]**
 
@@ -12,3 +12,7 @@ Built using Node.JS and MongoDB. Available script to export data to `.gexf` file
 4. Optionally export data with `npm run gexf`
 
 The crawler optimizes for the maximum requests possible in the shortest time span, taking the Twitter API rate limits into account.
+
+Made for [complex networks](https://fenix.tecnico.ulisboa.pt/cursos/meic-a/disciplina-curricular/283003985068082) class.
+
+License MIT
