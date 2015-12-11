@@ -5,12 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run babel-node -- index.js | bunyan -o short",
-    "crawler": "npm run babel-node -- ./lib/crawler.js | bunyan -o short",
-    "gexf": "npm run babel-node -- ./lib/scripts/gexf.js | bunyan -o short",
+    "start": "npm run build && node dist/index.js | bunyan -o short",
+    "gexf": "npm run build && node dist/lib/scripts/gexf.js",
     "babel-node": "babel-node --stage 0",
+    "compile": "babel --ignore node_modules,dist -d dist/ --stage 0 .",
+    "clean": "rm -rf ./dist",
+    "build": "npm run clean && npm run compile && npm run copy",
+    "copy": "cp ./package.json ./dist",
     "dev": "nodemon --exec npm run babel-node -- index.js | bunyan -o short",
-    "lint": "standard --verbose | snazzy"
+    "lint": "standard --verbose | snazzy",
+    "postinstall": "mkdir -p graph"
   },
   "pre-commit": [
     "lint"
