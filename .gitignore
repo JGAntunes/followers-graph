@@ -25,3 +25,6 @@ test-report.html
 
 # Output from gexf
 *.gexf
+
+# Dist folder
+dist
